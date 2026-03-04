@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #09090b;
+  --foreground: #e8e0f0;
+  --card: #12111a;
+  --card-foreground: #e8e0f0;
+  --popover: #12111a;
+  --popover-foreground: #e8e0f0;
+  --primary: #b48eff;
+  --primary-foreground: #09090b;
+  --secondary: #1a1625;
+  --secondary-foreground: #e8e0f0;
+  --muted: #1a1625;
+  --muted-foreground: #a09cb0;
+  --accent: #e879f9;
+  --accent-foreground: #09090b;
+  --destructive: #fb7185;
+  --destructive-foreground: #09090b;
+  --border: #2a2438;
+  --input: #2a2438;
+  --ring: #b48eff;
+  --chart-1: #b48eff;
+  --chart-2: #e879f9;
+  --chart-3: #fb7185;
+  --chart-4: #fbbf24;
+  --chart-5: #34d399;
+  --radius: 0.75rem;
+  --sidebar: #09090b;
+  --sidebar-foreground: #e8e0f0;
+  --sidebar-primary: #b48eff;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #1a1625;
+  --sidebar-accent-foreground: #e8e0f0;
+  --sidebar-border: #2a2438;
+  --sidebar-ring: #b48eff;
+  --lavender: #b48eff;
+  --orchid: #e879f9;
+  --pink: #fb7185;
+  --gold: #fbbf24;
+  --mint: #34d399;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: var(--font-fira-code), 'Fira Code', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: #b48eff;
+    color: #09090b;
+  }
+}
+
+@theme inline {
+  --color-lavender: var(--lavender);
+  --color-orchid: var(--orchid);
+  --color-pink: var(--pink);
+  --color-gold: var(--gold);
+  --color-mint: var(--mint);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.glow-lavender {
+  box-shadow: 0 0 25px rgba(180, 142, 255, 0.35), 0 0 80px rgba(180, 142, 255, 0.1);
+}
+
+.glow-orchid {
+  box-shadow: 0 0 25px rgba(232, 121, 249, 0.35), 0 0 80px rgba(232, 121, 249, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 25px rgba(251, 113, 133, 0.35), 0 0 80px rgba(251, 113, 133, 0.1);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.3), 0 0 80px rgba(251, 191, 36, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #b48eff, #e879f9, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #e879f9, #fb7185, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-lavender {
+  background: linear-gradient(135deg, #b48eff, #e879f9);
+}
+
+.border-glow {
+  position: relative;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #b48eff, #e879f9, #fb7185);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.border-glow:hover::before {
+  opacity: 0.6;
+}
