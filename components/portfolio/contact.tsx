@@ -15,20 +15,32 @@ import {
   MessageCircle,
   CheckCircle2,
   ArrowRight,
+  Phone, // ✅ ADDED
 } from "lucide-react"
 
 const contactMethods = [
   {
     icon: Mail,
     label: "Email",
-    value: "shamdavid2345@gmail.com",
-    href: "shamdavid2345@gmail.com",
+    value: "samdavid1699@gmail.com",
+    href: "samdavid1699@gmail.com",
     color: "text-lavender",
     bg: "bg-lavender/10",
     border: "border-lavender/25",
     hoverBorder: "hover:border-lavender/50",
     glow: "hover:shadow-lavender/10",
   },
+  {
+  icon: Phone,
+  label: "Phone",
+  value: "8072441796",
+  href: "tel:8072441796",
+  color: "text-pink",
+  bg: "bg-pink/10",
+  border: "border-pink/25",
+  hoverBorder: "hover:border-pink/50",
+  glow: "hover:shadow-pink/10",
+},
   {
     icon: MapPin,
     label: "Location",
@@ -121,7 +133,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3"
+          className="mx-auto mt-10 grid max-w-5xl gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         >
           {contactMethods.map((method, i) => {
             const Icon = method.icon
@@ -323,13 +335,13 @@ export function Contact() {
                 {"No worries! Click below to open your email client and send me a direct message."}
               </p>
               <motion.a
-                href="mailto:shamdavid2345@gmail"
+                href="mailto:samdavid1699@gmail"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="mt-5 inline-flex items-center gap-2 rounded-xl border border-lavender/40 bg-lavender/10 px-6 py-3 font-mono text-sm text-lavender transition-all hover:bg-lavender/20 hover:border-lavender hover:shadow-lg hover:shadow-lavender/15"
               >
                 <Mail className="h-4 w-4" />
-                shamdavid2345@gmail
+                samdavid1699@gmail
                 <ArrowRight className="h-3 w-3" />
               </motion.a>
             </div>

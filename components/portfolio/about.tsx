@@ -91,41 +91,42 @@ solutions that create measurable business impact across both frontend and backen
         </motion.div>
 
         {/* Profile Photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="group relative md:col-span-2"
-        >
-          <div className="relative overflow-hidden rounded-2xl">
+{/* Profile Photo */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="group relative w-[calc(100%-8px)] mx-auto md:w-full md:mx-0 md:col-span-2"
+>
+  <div className="relative overflow-hidden rounded-xl md:rounded-2xl">
 
-            {/* 🔥 Updated Image Height */}
-            <div className="relative h-[280px] md:h-[350px] lg:h-[400px] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/profile.jpg"
-                alt="Profile photo"
-                fill
-                className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-                sizes="(max-width: 768px) 100vw, 280px"
-                priority
-              />
+    {/* Responsive portrait ratio */}
+    <div className="relative w-full aspect-[4/5] overflow-hidden">
+      <Image
+        src="/images/profile.jpg"
+        alt="Profile photo"
+        fill
+        className="object-cover object-center transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+        sizes="(max-width: 768px) 100vw, 400px"
+        priority
+      />
 
-              {/* Lavender overlay on hover */}
-              <div className="absolute inset-0 bg-lavender/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
-            </div>
+      {/* Lavender overlay */}
+      <div className="absolute inset-0 bg-lavender/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
+    </div>
 
-            {/* Gradient border glow */}
-            <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-lavender via-orchid to-pink opacity-40 blur-md transition-opacity duration-500 group-hover:opacity-70" />
-          </div>
+    {/* Gradient glow (desktop only) */}
+    <div className="hidden md:block absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-lavender via-orchid to-pink opacity-40 blur-md transition-opacity duration-500 group-hover:opacity-70" />
+  </div>
 
-          {/* Decorative corner frame */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ delay: 0.6 }}
-            className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border-2 border-lavender/30 transition-all duration-500 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:border-orchid/40"
-          />
-        </motion.div>
+  {/* Decorative corner frame (desktop only) */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={isVisible ? { opacity: 1 } : {}}
+    transition={{ delay: 0.6 }}
+    className="hidden md:block absolute -bottom-3 -right-3 rounded-2xl border-2 border-lavender/30 transition-all duration-500 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:border-orchid/40"
+  />
+</motion.div>
       </div>
     </section>
   )

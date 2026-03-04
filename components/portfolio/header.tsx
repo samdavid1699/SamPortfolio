@@ -179,7 +179,7 @@ export function Header() {
             className="ml-4"
           >
             <motion.a
-              href="/images/Samdavid_SD1.pdf"
+              href="/images/Samdavid - Software Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center overflow-hidden rounded-lg border border-lavender px-4 py-2 font-mono text-sm text-lavender transition-all duration-300"
@@ -279,7 +279,7 @@ export function Header() {
                 transition={{ delay: 0.6, duration: 0.4 }}
               >
                 <a
-                  href="/images/Samdavid_SD1.pdf"
+                  href="/images/Samdavid - Software Engineer.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}

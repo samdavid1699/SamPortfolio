@@ -52,7 +52,7 @@ export function Socials() {
           className="font-mono text-xs tracking-widest text-muted-foreground transition-colors hover:text-lavender"
           style={{ writingMode: "vertical-rl" }}
         >
-          shamdavid2345@gmail
+          samdavid1699@gmail
         </motion.a>
       </motion.div>
     </>
